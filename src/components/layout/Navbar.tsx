@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X, MessageCircle, ShoppingBag } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { useCart } from "@/context/CartContext";
@@ -20,21 +21,24 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-luxury-black/5 bg-white/85 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        {/* Logo */}
+      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
+        {/* Logo (image) */}
         <Link href="/" className="flex items-center gap-3 group">
-          <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-luxury-black text-white transition group-hover:bg-gold group-hover:text-luxury-black">
-            <span className="font-display text-sm font-bold tracking-tight">
-              EG
-            </span>
+          <div className="relative h-11 w-11 overflow-hidden rounded-xl ring-1 ring-luxury-black/10 transition group-hover:ring-gold/50 group-hover:scale-105">
+            <Image
+              src="/logo.jpeg"
+              alt="EXCELLENCE GROSSISTE"
+              fill
+              sizes="44px"
+              priority
+              className="object-cover"
+            />
           </div>
           <div className="hidden sm:block leading-tight">
             <p className="text-[10px] uppercase tracking-[0.2em] text-gray-muted">
               Excellence
             </p>
-            <p className="text-sm font-semibold tracking-tight">
-              GROSSISTE
-            </p>
+            <p className="text-sm font-semibold tracking-tight">GROSSISTE</p>
           </div>
         </Link>
 

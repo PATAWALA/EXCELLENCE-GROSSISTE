@@ -1,3 +1,5 @@
+import Image from "next/image";
+import Link from "next/link";
 import { MapPin, Phone, Clock, MessageCircle } from "lucide-react";
 
 export function Footer() {
@@ -7,17 +9,25 @@ export function Footer() {
         <div className="grid gap-10 lg:grid-cols-3">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-luxury-black">
-                <span className="font-display text-sm font-bold">EG</span>
+            <Link href="/" className="flex items-center gap-3 group w-fit">
+              <div className="relative h-12 w-12 overflow-hidden rounded-xl ring-1 ring-white/15 bg-white/5 transition group-hover:ring-gold/60 group-hover:scale-105">
+                <Image
+                  src="/logo.jpeg"
+                  alt="EXCELLENCE GROSSISTE"
+                  fill
+                  sizes="48px"
+                  className="object-cover"
+                />
               </div>
-              <div>
+              <div className="leading-tight">
                 <p className="text-[10px] uppercase tracking-[0.2em] text-white/50">
                   Excellence
                 </p>
-                <p className="text-sm font-semibold tracking-tight">GROSSISTE</p>
+                <p className="text-sm font-semibold tracking-tight">
+                  GROSSISTE
+                </p>
               </div>
-            </div>
+            </Link>
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-white/60">
               Distributeur officiel de parfums de Dubaï en France. Lattafa, Swiss
               Arabian, Armaf, Maison Alhambra — prix de gros B2B.
@@ -74,11 +84,20 @@ export function Footer() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-white/40 sm:flex-row">
-          <p>© {new Date().getFullYear()} EXCELLENCE GROSSISTE. Tous droits réservés.</p>
+          <p>
+            © {new Date().getFullYear()} EXCELLENCE GROSSISTE. Tous droits
+            réservés.
+          </p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-white/70 transition">Mentions légales</a>
-            <a href="#" className="hover:text-white/70 transition">CGV</a>
-            <a href="#" className="hover:text-white/70 transition">Confidentialité</a>
+            <a href="#" className="hover:text-white/70 transition">
+              Mentions légales
+            </a>
+            <a href="#" className="hover:text-white/70 transition">
+              CGV
+            </a>
+            <a href="#" className="hover:text-white/70 transition">
+              Confidentialité
+            </a>
           </div>
         </div>
       </div>
